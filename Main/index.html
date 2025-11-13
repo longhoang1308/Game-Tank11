@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Game Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="game-container">
+    <canvas class="webgl"></canvas>
+    <div id="info-container" class="hidden md:block">
+      <h2 class="text-lg font-bold mb-2">Điều khiển</h2>
+      <p><span class="font-bold">W / S:</span> Tiến / Lùi</p>
+      <p><span class="font-bold">A / D:</span> Xoay trái / Xoay phải</p>
+      <p><span class="font-bold">Shift:</span> Tăng tốc</p>
+      <p><span class="font-bold">Di chuyển chuột:</span> Xoay nòng pháo</p>
+      <p><span class="font-bold">Space / Chuột trái:</span> Bắn</p>
+    </div>
+    <button id="modeButton" style="padding: 12px 28px; background-color: #9333ea; color: white; font-weight: 600; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: absolute; bottom: 16px; right: 16px; z-index: 2000; border: none; cursor: pointer; font-size: 16px; transition: all 0.2s;"> Chế độ: Hạt </button>
+    <div id="portfolio-popup" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[99]">
+      <div id="portfolio-popup-content" class="bg-white text-gray-800 p-8 rounded-lg shadow-xl max-w-2xl w-full relative">
+        <button id="close-popup-btn" class="absolute top-2 right-4 text-gray-600 hover:text-gray-900 text-3xl font-bold">&times;</button>
+        <h2 class="text-3xl font-bold mb-4">My Portfolio</h2>
+        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+        <p>Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 2D view container (hidden by default) -->
+  <div id="web-view-container" class="hidden">
+    <div class="min-h-screen flex items-center justify-center">
+      <h1 class="text-7xl font-bold tracking-tighter">Change view</h1>
+    </div>
+    <footer class="bg gray-200 text-gray-800 p-8 text-center">
+      <p class="mb-4">This is footer of my portfolio</p>
+      <button id="returnButton" class="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition-transform transform hover:scale-105">Return to game</button>
+    </footer>
+  </div>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+        "lil-gui": "https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm",
+        "three/examples/jsm/controls/OrbitControls.js": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js"
+      }
+    }
+  </script>
+  <script type="module" src="script.js?v=1.0"></script>
+</body>
+</html>

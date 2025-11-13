@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block; 
+  width: 100vw; 
+  height: 100vh; 
+  }
+
+html, body {
+  background-color: black;
+  overflow: hidden;
+}
+
+#modeButton:hover {
+  background-color: #7c3aed;
+  transform: scale(1.05);
+}
+
+/* Ensure portfolio popup is hidden by default */
+#portfolio-popup.hidden {
+  display: none !important;
+}
+
+#info-container { 
+position: absolute; 
+top: 10px; 
+left: 10px; 
+color: white; 
+padding: 10px; 
+background-color: rgba(0, 0, 0, 0.5); 
+border-radius: 8px; 
+font-size: 14px; 
+z-index: 10; }
+#resetButton { 
+position: absolute; 
+bottom: 20px; 
+left: 50%; 
+transform: translateX(-50%); 
+z-index: 10;
+}
+
+#game-container { 
+  position: fixed; 
+  inset: 0; 
+}
+
+#web-view-container {
+  background-color: white;
+  color: #111827;
+  height: 100vh;
+  overflow-y: auto;
+}
